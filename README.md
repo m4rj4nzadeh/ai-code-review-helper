@@ -33,6 +33,19 @@ Run the tool from the command line:
 ai-code-review-helper --owner your-repo-owner --repo your-repo-name --pr 1
 ```
 
+```sample output
+AI-Powered Review:
+ Overall, the code looks well-structured and follows common practices for setting up a GraphQL schema. Here are some suggestions for improvements:
+
+1. **Consistent Naming**: The naming convention for GraphQL types and fields is crucial for readability and maintainability. It's good to maintain consistency in naming throughout the schema. For example, you have `MenuItemType` and `CustomQueryResultType`, which are clear and descriptive. Consider applying this principle to all your type and field names.
+
+2. **Input Validation**: Input validation is important to ensure data integrity. You are using `GraphQLNonNull` for the "search" argument in the custom query, which is great. Consider applying similar validation for other arguments where necessary to enforce required inputs.
+
+3. **Error Handling**: Error handling is essential in GraphQL resolvers to provide meaningful feedback to clients. Add error handling logic in your resolvers to handle exceptions gracefully and return appropriate error messages back to the client.
+
+4. **Documentation**: Adding comments and documentation to your
+```
+
 ### GitHub Action Integration
 
 Add to your GitHub Actions workflow:
