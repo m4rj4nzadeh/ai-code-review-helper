@@ -1,0 +1,17 @@
+name: AI-Powered Code Review
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ai_review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run AI-Powered Code Review
+        run: |
+          npx ai-code-review-helper --owner ${{ github.repository_owner }} --repo ${{ github.event.repository.name }} --pr ${{ github.event.pull_request.number }}
