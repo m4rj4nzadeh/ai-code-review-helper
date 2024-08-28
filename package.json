@@ -1,6 +1,6 @@
 {
   "name": "ai-code-review-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI-Powered Code Review Helper for GitHub Pull Requests",
   "main": "src/index.js",
   "type": "module",

@@ -21,8 +21,19 @@ const options = program.opts();
     }
 
     try {
-        const review = await analyzePR(options.owner, options.repo, options.pr);
-        console.log("AI-Powered Review:\n", review);
+        const {
+            aiReview,
+            securityIssues,
+            refactoringSuggestions,
+            complexityIssues,
+            styleSuggestions,
+        } = await analyzePR(options.owner, options.repo, options.pr);
+
+        console.log("AI-Powered Review:\n", aiReview);
+        console.log("\nSecurity Issues:\n", securityIssues.join('\n'));
+        console.log("\nRefactoring Suggestions:\n", refactoringSuggestions.join('\n'));
+        console.log("\nComplexity Issues:\n", complexityIssues.join('\n'));
+        console.log("\nStyle Suggestions:\n", styleSuggestions.join('\n'));
     } catch (error) {
         console.error("Error during review:", error.message);
         process.exit(1);
